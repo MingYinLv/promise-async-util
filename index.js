@@ -3,6 +3,9 @@
  */
 
 const createLast = require('./last');
-module.exports = createLast;
+const throttle = require('./throttle');
+
+exports.createLast = createLast;
+exports.throttle = throttle;
 
 

@@ -13,11 +13,13 @@ function createLast() {
    */
   return (promise) => {
     lastPromise = promise;
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       promise.then((data) => {
         if (lastPromise === promise) {
           resolve(data);
         }
+      }).catch((err) => {
+        reject(err);
       });
     });
   }
